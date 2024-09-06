@@ -17,7 +17,7 @@ EXPOSE 8000
 # Define environment variable
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV SECRET_KEY="django-insecure-)&phbrv$yo&wsfac-z#k)(s7n0qq1=puh0qxn_zzn%rax18$3#"
+
 
 
 # Run the commande to start Gunicorn
