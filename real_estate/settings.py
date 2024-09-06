@@ -1,4 +1,3 @@
-import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -12,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-)&phbrv$yo&wsfac-z#k)(s7n0qq1=puh0qxn_zzn%rax18$3#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
+DEBUG =False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -106,6 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+
+ALLOWED_HOSTS = ['13.38.55.186', 'localhost', '127.0.0.1']
 
 
 # Internationalization
