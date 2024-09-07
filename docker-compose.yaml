@@ -5,15 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: kamel2022/backend:latest  # Change this if you're using Docker Hub or another registry
+    image: kamel2022/backend:latest
     ports:
       - "8000:8000"
     env_file:
       - .env
-    environment:
-      - SECRET_KEY=${SECRET_KEY}
-      - DEBUG=${DEBUG}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     volumes:
       - .:/app
     restart: always
