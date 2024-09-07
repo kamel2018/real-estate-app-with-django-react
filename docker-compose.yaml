@@ -1,16 +1,18 @@
-version: '3.8'
+version: '3.8'  # You can remove this line if you want to use the latest version without specifying it
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .  # Points to the current directory where Dockerfile is located
     image: kamel2022/backend:latest
     ports:
       - "8000:8000"
     env_file:
-      - .env
+      - /home/ubuntu/.env
     volumes:
       - .:/app
-    restart: always
-    command: gunicorn real_estate.wsgi:application --bind 0.0.0.0:8000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
