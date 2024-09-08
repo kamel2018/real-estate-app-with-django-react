@@ -2,18 +2,16 @@ version: '3.8'
 
 services:
   web:
-    image: kamel2022/backend:latest  # Pulls the image from Docker Hub
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
     ports:
       - "8000:8000"
-    environment:
-      - SECRET_KEY=${SECRET_KEY}
-      - DEBUG=${DEBUG}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     volumes:
-      - .:/app  # Optional for local file override, can be removed
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - .:/app
+    environment:
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
