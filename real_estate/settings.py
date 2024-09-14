@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-ALLOWED_HOSTS = ['13.38.55.186', 'localhost', '127.0.0.1']
+
 
 
 # Internationalization
